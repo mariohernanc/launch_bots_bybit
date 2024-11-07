@@ -9,7 +9,7 @@ with open('bots.json', 'r') as file:
 # configuracion de carpeta padre donde esta cada carpeta para cada bot (e.g. /home/mac/botrsi) si las carpetas son /home/mac/botrsi/ada o /home/mac/botrsi/doge
 base_path = "" 
 # configuracion de entorno virtual (e.g. /home/mac/rsi/bin/activate) - Activar entorno virtual --> echo $VIRTUAL_ENV --> agregar '/bin/activate' al final al resultado
-venv_path = "" 
+venv_path = ".../bin/activate" 
 
 # Iterar sobre cada bot en el JSON
 for bot in data['bots']:
