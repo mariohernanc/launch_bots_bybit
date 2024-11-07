@@ -6,10 +6,10 @@ import subprocess
 with open('bots.json', 'r') as file:
     data = json.load(file)
 
-# Ruta base donde se encuentran los scripts
-base_path = "" # configuracion de carpeta padre donde esta cada carpeta para cada bot (e.g. /home/mac/botrsi) si las carpetas son /home/mac/botrsi/ada o /home/mac/botrsi/doge
-# Ruta al entorno virtual
-venv_path = "" # configuracion de entorno virtual (e.g. /home/mac/rsi/bin/activate) - Activar entorno virtual --> echo $VIRTUAL_ENV --> agregar '/activate' al final al resultado
+# configuracion de carpeta padre donde esta cada carpeta para cada bot (e.g. /home/mac/botrsi) si las carpetas son /home/mac/botrsi/ada o /home/mac/botrsi/doge
+base_path = "" 
+# configuracion de entorno virtual (e.g. /home/mac/rsi/bin/activate) - Activar entorno virtual --> echo $VIRTUAL_ENV --> agregar '/bin/activate' al final al resultado
+venv_path = "" 
 
 # Iterar sobre cada bot en el JSON
 for bot in data['bots']:
@@ -30,7 +30,7 @@ for bot in data['bots']:
             subprocess.run(command, shell=True)
             print(f"Sesión tmux '{session_name}' creada y ejecutando '{script_path}' en el directorio '{folder_path}' en el entorno virtual.")
         else:
-            print(f"Carpeta '{folder_name}' no existe o no se encontró 'botrsi.py'.")
+            print(f"Carpeta '{folder_name}' no existe o no se encontró 'botrsi_bybit.py'.")
     else:
         print(f"Sesión tmux para '{folder_name}' no se creará (inactiva).")
 
